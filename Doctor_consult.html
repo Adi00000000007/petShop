@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doctor Consultation - Pet Shop</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    header, nav, footer { background: #f2f2f2; padding: 10px; }
+    nav ul { list-style-type: none; margin: 0; padding: 0; }
+    nav ul li { display: inline-block; margin-right: 15px; }
+    nav ul li a { text-decoration: none; color: #333; }
+    .container { padding: 20px; }
+    form { margin-top: 20px; }
+    input, textarea { width: 100%; padding: 8px; margin: 5px 0; }
+  </style>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Doctor Consultation</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="services.html">Back to Services</a></li>
+      <li><a href="index.html">Home</a></li>
+    </ul>
+  </nav>
+  
+  <div class="container">
+    <h2>Book a Consultation</h2>
+    <form>
+      <label for="petName">Pet's Name:</label>
+      <input type="text" id="petName" name="petName" required>
+      
+      <label for="ownerName">Owner's Name:</label>
+      <input type="text" id="ownerName" name="ownerName" required>
+      
+      <label for="consultDate">Date:</label>
+      <input type="date" id="consultDate" name="consultDate" required>
+      
+      <label for="comments">Comments:</label>
+      <textarea id="comments" name="comments" rows="4"></textarea>
+      
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  
+  <footer>
+    <p>&copy; 2023 Pet Shop. All rights reserved.</p>
+  </footer>
+</body>
+</html>

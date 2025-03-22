@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback - Pet Shop</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Feedback</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="feedback-form-container">
+    <form id="feedbackForm">
+      <label for="fName">Name:</label>
+      <input type="text" id="fName" name="fName" required>
+      
+      <label for="userFeedback">Your Feedback:</label>
+      <textarea id="userFeedback" name="userFeedback" rows="5" required></textarea>
+      
+      <button type="submit">Submit Feedback</button>
+    </form>
+  </div>
+  <footer>
+    <p>&copy; 2023 Pet Shop. All rights reserved.</p>
+  </footer>
+  
+  <script>
+    document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Get the input values
+      const fName = document.getElementById('fName').value;
+      const feedback = document.getElementById('userFeedback').value;
+      
+      // Create a feedback post object
+      const post = {
+        name: fName,
+        feedback: feedback,
+        time: new Date().toLocaleString()
+      };
+      
+      // Retrieve posts from localStorage or create an empty array if none
+      let posts = JSON.parse(localStorage.getItem('feedbackPosts')) || [];
+      posts.push(post);
+      
+      // Store the updated posts array back in localStorage
+      localStorage.setItem('feedbackPosts', JSON.stringify(posts));
+      
+      alert('Thank you for your feedback!');
+      e.target.reset();
+    });
+  </script>
+</body>
+</html>

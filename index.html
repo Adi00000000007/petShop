@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Shop - Home</title>
+    <style>
+      body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+      header, nav, footer { background: #f2f2f2; padding: 10px; }
+      nav ul { list-style-type: none; margin: 0; padding: 0; }
+      nav ul li { display: inline-block; margin-right: 15px; }
+      nav ul li a { text-decoration: none; color: #333; }
+      .container { padding: 20px; }
+    </style>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+      <h1>Welcome to Our Pet Shop</h1>
+    </header>
+    <nav>
+        
+    </nav>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="product.html">Products</a></li>
+        <li><a href="adoption.html">Adoption</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+        <li><a href="Donation.html">Donation</a></li>
+      </ul>
+    </nav>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+          const feedbackContainer = document.getElementById('feedbackPosts');
+          
+          // Retrieve stored feedback from localStorage
+          let posts = JSON.parse(localStorage.getItem('feedbackPosts')) || [];
+          
+          // Clear existing content (if any) except the header
+          // And create an element for each feedback post
+          posts.forEach(post => {
+            const postEl = document.createElement('div');
+            postEl.className = 'feedback-post';
+            postEl.innerHTML = `
+              <h3>${post.name} <small>${post.time}</small></h3>
+              <p>${post.feedback}</p>
+              <hr>
+            `;
+            feedbackContainer.appendChild(postEl);
+          });
+        });
+      </script>    
+    <div class="container">
+      <p>Your one-stop destination for all pet needs!</p>
+      <p>Explore our wide range of services, products, and adoption facilities.</p>
+    </div>
+    <div id="feedbackPosts">
+        <h2>Customer Feedback</h2>
+    </div>
+    <footer>
+      <p>&copy; 2023 Pet Shop. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
